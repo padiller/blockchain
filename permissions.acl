@@ -1,0 +1,9 @@
+
+rule Aseguradora {
+    description: "La aseguradora tiene cualquier permiso para sus carros"
+    participant(a): "com.ibm.vehicle.polizaseguro.Aseguradora"
+    operation: ALL
+	resource(v): "com.ibm.vehicle.polizaseguro.Vehicle"
+    condition: (v.uuid.getIdentifier() == a.getIdentifier())
+    action: ALLOW
+}
