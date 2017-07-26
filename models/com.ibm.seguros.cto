@@ -1,0 +1,55 @@
+/**
+ * Definicion de modelo de datos
+ */
+
+namespace com.ibm.seguros
+
+asset Poliza identified by polizaId {
+  o String polizaId
+  --> Aseguradora aseguradora
+  o Tipo tipoPoliza
+  o String vin
+  o String placa
+  o DateTime fechaInicio
+  o DateTime fechaFin
+  o Estatus estatusPoliza
+  o Cliente titular
+}
+
+enum Estatus {
+  o Activa
+  o Vencida
+}
+
+enum Tipo {
+  o Estandar
+  o Amplia
+  o Personalizada
+}
+
+concept Cliente {
+  o String nombre
+    o String apellidoP
+    o String apellidoM
+    o Integer telefono
+}
+
+participant Aseguradora identified by aseguradoraId {
+  o String aseguradoraId
+  o String nombre
+}
+
+participant Policia identified by policiaId {
+  o String policiaId
+  o String nombre
+}
+
+transaction Actualizar {
+  o Tipo tipoPoliza
+  o String placa
+  o DateTime fechaInicio
+  o DateTime fechaFin
+  o Estatus estatusPoliza
+  --> Aseguradora aseguradora
+  --> Poliza poliza
+}

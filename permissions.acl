@@ -1,9 +1,20 @@
+/**
+ * Access Control List
+ */
 
-rule Aseguradora {
-    description: "La aseguradora tiene cualquier permiso para sus carros"
-    participant(a): "com.ibm.vehicle.polizaseguro.Aseguradora"
+rule ReglaAseguradoras {
+    description: "Acceso total a polizas propias."
+    participant(m): "com.ibm.seguros.Aseguradora"
     operation: ALL
-	resource(v): "com.ibm.vehicle.polizaseguro.Vehicle"
-    condition: (v.uuid.getIdentifier() == a.getIdentifier())
+	resource(v): "com.ibm.seguros.Poliza"
+    condition: (v.aseguradora.getIdentifier() == m.getIdentifier())
+    action: ALLOW
+}
+
+rule ReglaPolicia {
+    description: "Acceso a lectura de todas las polizas."
+    participant: "com.ibm.seguros.Policia"
+    operation: READ
+    resource: "com.ibm.seguros.Poliza"
     action: ALLOW
 }
