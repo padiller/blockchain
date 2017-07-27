@@ -1,0 +1,38 @@
+
+{
+  "$class": "com.ibm.seguros.Aseguradora",
+  "aseguradoraId": "aseguradoraId:2606",
+  "nombre": "BANCOMER"
+}
+
+{
+  "$class": "com.ibm.seguros.Aseguradora",
+  "aseguradoraId": "aseguradoraId:4747",
+  "nombre": "AXXA"
+}
+
+{
+  "$class": "com.ibm.seguros.Poliza",
+  "polizaId": "polizaId:0155",
+  "owner": "resource:com.ibm.seguros.Aseguradora#aseguradoraId:2606",
+  "tipoPoliza": "Amplia",
+  "vin": "1M8GDM9A X KP042788",
+  "placa": "MWW9234",
+  "fechaInicio": "2017-07-26T17:55:09.773Z",
+  "fechaFin": "2017-07-26T17:55:09.773Z",
+  "estatusPoliza": "Vencida",
+  "titular": {
+    "$class": "com.ibm.seguros.Cliente",
+    "nombre": "Joel",
+    "apellidoPaterno": "Lara",
+    "apellidoMaterno": "Quintana",
+    "telefono": "55411223344",
+    "correo":"joellq@mx1.ibm.com"
+  }
+}
+
+{
+  "$class": "com.ibm.seguros.Policia",
+  "policiaId": "policiaId:2167",
+  "nombre": "Poli1"
+}

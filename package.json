@@ -1,0 +1,23 @@
+{
+  "engines": {
+    "composer": "^0.10.0"
+  },
+  "name": "ibm-poc-blockchain",
+  "version": "0.2",
+  "description": "Hyperledger composer IBM PoC for Blockchain",
+  "scripts": {
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/ibm-poc-blockchain.bna"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padiller/blockchain.git"
+  },
+  "keywords": [
+    "ibm",
+    "bluemix",
+    "hyperledger",
+    "composer",
+    "composer-network"
+  ],
+  "author": "Joel Lara & Luis Padilla"
+}

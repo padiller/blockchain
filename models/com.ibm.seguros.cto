@@ -6,7 +6,7 @@ namespace com.ibm.seguros
 
 asset Poliza identified by polizaId {
   o String polizaId
-  --> Aseguradora aseguradora
+  --> Aseguradora owner
   o Tipo tipoPoliza
   o String vin
   o String placa
@@ -29,9 +29,10 @@ enum Tipo {
 
 concept Cliente {
   o String nombre
-    o String apellidoP
-    o String apellidoM
-    o Integer telefono
+  o String apellidoPaterno
+  o String apellidoMaterno
+  o String telefono
+  o String correo
 }
 
 participant Aseguradora identified by aseguradoraId {

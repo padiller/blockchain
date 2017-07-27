@@ -7,7 +7,7 @@ rule ReglaAseguradoras {
     participant(m): "com.ibm.seguros.Aseguradora"
     operation: ALL
 	resource(v): "com.ibm.seguros.Poliza"
-    condition: (v.aseguradora.getIdentifier() == m.getIdentifier())
+    condition: (v.owner.getIdentifier() == m.getIdentifier())
     action: ALLOW
 }
 
@@ -18,3 +18,12 @@ rule ReglaPolicia {
     resource: "com.ibm.seguros.Poliza"
     action: ALLOW
 }
+
+rule SystemACL {
+  description:  "System ACL to permit all access"
+  participant: "org.hyperledger.composer.system.Participant"
+  operation: ALL
+  resource: "org.hyperledger.composer.system.**"
+  action: ALLOW
+}
+
